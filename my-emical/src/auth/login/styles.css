@@ -1,0 +1,10 @@
+.auth-page { display: grid; place-items: center; min-height: calc(100dvh - 120px); padding: 16px; }
+.auth-page.glass .auth-card { backdrop-filter: blur(8px); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.auth-page .auth-card { max-width: 520px; margin: 0 auto; width: 100%; }
+.auth-page .form-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.auth-page input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.15)); background: var(--input-bg, rgba(0,0,0,0.1)); color: inherit; }
+.auth-page .error { color: #ef4444; font-size: 13px; }
+.auth-page .success { color: #22c55e; font-size: 13px; }
+.auth-page .input-group { display: flex; gap: 8px; align-items: center; }
+.auth-page .input-group .chip { min-width: 64px; }
+.auth-page .switch-link { margin-top: 8px; font-size: 13px; opacity: 0.9; }

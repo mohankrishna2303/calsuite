@@ -1,0 +1,266 @@
+/* ===== TAX CALCULATOR - PROFESSIONAL STYLES ===== */
+
+.tax-calculator {
+  --calc-accent: #ef4444;
+  --calc-accent-light: rgba(239, 68, 68, 0.15);
+  --calc-accent-glow: rgba(239, 68, 68, 0.25);
+}
+
+/* Card Header */
+.tax-calculator .card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.tax-calculator .card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tax-calculator .card-header .subtext {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Field Labels */
+.tax-calculator .field label::after {
+  content: ' (TAX)';
+  color: rgba(239, 68, 68, 0.5);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Inputs */
+.tax-calculator input,
+.tax-calculator select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.05);
+  color: #f9fafb;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.tax-calculator input:focus,
+.tax-calculator select:focus {
+  outline: none;
+  border-color: var(--calc-accent);
+  box-shadow: 0 0 0 3px var(--calc-accent-glow);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.tax-calculator select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ef4444' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+/* Form Grid */
+.tax-calculator .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Results Section */
+.tax-calculator .results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.tax-calculator .results .result {
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.04));
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tax-calculator .results .result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tax-calculator .results .result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.tax-calculator .results .result:hover::before {
+  opacity: 1;
+}
+
+.tax-calculator .results .result .result-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.tax-calculator .result-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f9fafb;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tax-calculator .result-value.highlight {
+  background: linear-gradient(135deg, #ef4444 0%, #fca5a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Buttons */
+.tax-calculator .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.tax-calculator .btn {
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tax-calculator .btn.primary {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+}
+
+.tax-calculator .btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(239, 68, 68, 0.45);
+}
+
+.tax-calculator .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  .tax-calculator .card-header {
+    text-align: center;
+  }
+  
+  .tax-calculator .card-header h2 {
+    font-size: 20px;
+  }
+  
+  .tax-calculator .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .tax-calculator .results {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .tax-calculator .results .result {
+    padding: 20px;
+  }
+  
+  .tax-calculator .result-value {
+    font-size: 24px;
+  }
+  
+  .tax-calculator .form-actions {
+    flex-direction: column;
+  }
+  
+  .tax-calculator .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tax-calculator .card-header h2 {
+    font-size: 18px;
+  }
+  
+  .tax-calculator .card-header .subtext {
+    font-size: 13px;
+  }
+  
+  .tax-calculator input,
+  .tax-calculator select {
+    padding: 12px 14px;
+  }
+  
+  .tax-calculator .results .result {
+    padding: 16px;
+  }
+  
+  .tax-calculator .result-value {
+    font-size: 20px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  .tax-calculator input,
+  .tax-calculator select {
+    min-height: 50px;
+    font-size: 16px;
+  }
+  
+  .tax-calculator .btn {
+    min-height: 50px;
+  }
+  
+  .tax-calculator .btn:hover {
+    transform: none;
+  }
+  
+  .tax-calculator .btn:active {
+    transform: scale(0.98);
+  }
+  
+  .tax-calculator .results .result:hover {
+    transform: none;
+  }
+}

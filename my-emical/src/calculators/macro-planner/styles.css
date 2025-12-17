@@ -1,0 +1,212 @@
+/* ===== MACRO PLANNER - PROFESSIONAL STYLES ===== */
+
+.macro-planner {
+  --calc-accent: #ec4899;
+  --calc-accent-light: rgba(236, 72, 153, 0.15);
+  --calc-accent-glow: rgba(236, 72, 153, 0.25);
+}
+
+/* Card Header */
+.macro-planner .card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.15);
+}
+
+.macro-planner .card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.macro-planner .card-header .subtext {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Form Grid */
+.macro-planner .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Inputs and Selects */
+.macro-planner input,
+.macro-planner select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  background: rgba(236, 72, 153, 0.05);
+  color: #f9fafb;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.macro-planner input:focus,
+.macro-planner select:focus {
+  outline: none;
+  border-color: var(--calc-accent);
+  box-shadow: 0 0 0 3px var(--calc-accent-glow);
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.macro-planner select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ec4899' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+/* Results Grid */
+.macro-planner .results.pro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.macro-planner .results.pro .result {
+  padding: 24px 16px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(236, 72, 153, 0.12), rgba(236, 72, 153, 0.04));
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.macro-planner .results.pro .result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ec4899, #f472b6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.macro-planner .results.pro .result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(236, 72, 153, 0.2);
+  border-color: rgba(236, 72, 153, 0.4);
+}
+
+.macro-planner .results.pro .result:hover::before {
+  opacity: 1;
+}
+
+.macro-planner .results.pro .result .result-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.macro-planner .results.pro .result .result-value {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ec4899 0%, #fbcfe8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1024px) {
+  .macro-planner .results.pro {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .macro-planner .card-header {
+    text-align: center;
+  }
+  
+  .macro-planner .card-header h2 {
+    font-size: 20px;
+  }
+  
+  .macro-planner .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .macro-planner .results.pro {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .macro-planner .results.pro .result {
+    padding: 20px;
+  }
+  
+  .macro-planner .results.pro .result .result-value {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .macro-planner .card-header h2 {
+    font-size: 18px;
+  }
+  
+  .macro-planner .card-header .subtext {
+    font-size: 13px;
+  }
+  
+  .macro-planner input,
+  .macro-planner select {
+    padding: 12px 14px;
+  }
+  
+  .macro-planner .results.pro .result {
+    padding: 16px;
+  }
+  
+  .macro-planner .results.pro .result .result-label {
+    font-size: 10px;
+  }
+  
+  .macro-planner .results.pro .result .result-value {
+    font-size: 20px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  .macro-planner input,
+  .macro-planner select {
+    min-height: 50px;
+    font-size: 16px;
+  }
+  
+  .macro-planner .results.pro .result:hover {
+    transform: none;
+  }
+  
+  .macro-planner .results.pro .result:active {
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,243 @@
+/* ===== POWER CALCULATOR - PROFESSIONAL STYLES ===== */
+
+.power-calculator {
+  --calc-accent: #f97316;
+  --calc-accent-light: rgba(249, 115, 22, 0.15);
+  --calc-accent-glow: rgba(249, 115, 22, 0.25);
+}
+
+/* Card Header */
+.power-calculator .card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.power-calculator .card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.power-calculator .card-header .subtext {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Form Grid */
+.power-calculator .form-grid.four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Inputs */
+.power-calculator input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  background: rgba(249, 115, 22, 0.05);
+  color: #f9fafb;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.power-calculator input:focus {
+  outline: none;
+  border-color: var(--calc-accent);
+  box-shadow: 0 0 0 3px var(--calc-accent-glow);
+  background: rgba(249, 115, 22, 0.1);
+}
+
+/* Actions Row */
+.power-calculator .actions-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Clear Button */
+.power-calculator .btn.clear {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: rgba(249, 115, 22, 0.1);
+  color: #fb923c;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.power-calculator .btn.clear:hover {
+  background: rgba(249, 115, 22, 0.2);
+  border-color: rgba(249, 115, 22, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.2);
+}
+
+/* Results Section */
+.power-calculator .results.pro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.power-calculator .results.pro .result {
+  padding: 24px 16px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(249, 115, 22, 0.12), rgba(249, 115, 22, 0.04));
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.power-calculator .results.pro .result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.power-calculator .results.pro .result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(249, 115, 22, 0.2);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+.power-calculator .results.pro .result:hover::before {
+  opacity: 1;
+}
+
+.power-calculator .results.pro .result .result-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.power-calculator .results.pro .result .result-value {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f97316 0%, #fdba74 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1024px) {
+  .power-calculator .form-grid.four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .power-calculator .results.pro {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .power-calculator .card-header {
+    text-align: center;
+  }
+  
+  .power-calculator .card-header h2 {
+    font-size: 20px;
+  }
+  
+  .power-calculator .form-grid.four {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .power-calculator .actions-row {
+    justify-content: center;
+  }
+  
+  .power-calculator .btn.clear {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .power-calculator .results.pro {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .power-calculator .results.pro .result {
+    padding: 20px;
+  }
+  
+  .power-calculator .results.pro .result .result-value {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .power-calculator .card-header h2 {
+    font-size: 18px;
+  }
+  
+  .power-calculator .card-header .subtext {
+    font-size: 13px;
+  }
+  
+  .power-calculator input {
+    padding: 12px 14px;
+  }
+  
+  .power-calculator .results.pro .result {
+    padding: 16px;
+  }
+  
+  .power-calculator .results.pro .result .result-value {
+    font-size: 20px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  .power-calculator input {
+    min-height: 50px;
+    font-size: 16px;
+  }
+  
+  .power-calculator .btn.clear {
+    min-height: 48px;
+  }
+  
+  .power-calculator .btn.clear:hover {
+    transform: none;
+  }
+  
+  .power-calculator .btn.clear:active {
+    transform: scale(0.98);
+  }
+  
+  .power-calculator .results.pro .result:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,197 @@
+/* ===== AGE CALCULATOR - PROFESSIONAL STYLES ===== */
+
+.age-calculator {
+  --calc-accent: #8b5cf6;
+  --calc-accent-light: rgba(139, 92, 246, 0.15);
+  --calc-accent-glow: rgba(139, 92, 246, 0.25);
+}
+
+/* Card Header */
+.age-calculator .card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.age-calculator .card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.age-calculator .card-header .subtext {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Form Grid */
+.age-calculator .form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .age-calculator .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Date Input */
+.age-calculator input[type="date"],
+.age-calculator input[type="number"] {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.05);
+  color: #f9fafb;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.age-calculator input:focus {
+  outline: none;
+  border-color: var(--calc-accent);
+  box-shadow: 0 0 0 3px var(--calc-accent-glow);
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.age-calculator input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+/* Results Section */
+.age-calculator .results.pro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.age-calculator .results.pro .result {
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(139, 92, 246, 0.12), rgba(139, 92, 246, 0.04));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.age-calculator .results.pro .result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.age-calculator .results.pro .result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.age-calculator .results.pro .result:hover::before {
+  opacity: 1;
+}
+
+.age-calculator .results.pro .result .result-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.age-calculator .results.pro .result .result-value {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  .age-calculator .card-header {
+    text-align: center;
+  }
+  
+  .age-calculator .card-header h2 {
+    font-size: 20px;
+  }
+  
+  .age-calculator .results.pro {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .age-calculator .results.pro .result {
+    padding: 20px;
+  }
+  
+  .age-calculator .results.pro .result .result-value {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .age-calculator .card-header h2 {
+    font-size: 18px;
+  }
+  
+  .age-calculator .card-header .subtext {
+    font-size: 13px;
+  }
+  
+  .age-calculator input[type="date"],
+  .age-calculator input[type="number"] {
+    padding: 12px 14px;
+  }
+  
+  .age-calculator .results.pro .result {
+    padding: 16px;
+  }
+  
+  .age-calculator .results.pro .result .result-value {
+    font-size: 20px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  .age-calculator input[type="date"],
+  .age-calculator input[type="number"] {
+    min-height: 50px;
+    font-size: 16px;
+  }
+  
+  .age-calculator .results.pro .result:hover {
+    transform: none;
+  }
+  
+  .age-calculator .results.pro .result:active {
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,187 @@
+/* ===== BASIC CALCULATOR - PROFESSIONAL STYLES ===== */
+
+.basic-calculator {
+  --calc-accent: #06b6d4;
+  --calc-accent-light: rgba(6, 182, 212, 0.15);
+  --calc-accent-glow: rgba(6, 182, 212, 0.25);
+}
+
+/* Display Section */
+.basic-calculator .calc-display {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 16px;
+}
+
+.basic-calculator .calc-display .expr {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: #f9fafb;
+  font-size: 24px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  text-align: right;
+  transition: all 0.25s ease;
+}
+
+.basic-calculator .calc-display .expr:focus {
+  outline: none;
+  border-color: var(--calc-accent);
+  box-shadow: 0 0 0 3px var(--calc-accent-glow);
+}
+
+.basic-calculator .calc-display .preview {
+  min-width: 120px;
+  padding: 12px 16px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--calc-accent);
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(6, 182, 212, 0.1);
+  border-radius: 10px;
+}
+
+.basic-calculator .calc-display .preview.invalid {
+  opacity: 0.4;
+  color: #9ca3af;
+}
+
+/* Keypad Layout */
+.basic-calculator .keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.basic-calculator .keypad button {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f9fafb;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.basic-calculator .keypad button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.basic-calculator .keypad button:active {
+  transform: translateY(0);
+}
+
+/* Accent Buttons (Operators) */
+.basic-calculator .keypad button.accent {
+  background: linear-gradient(145deg, rgba(6, 182, 212, 0.25), rgba(6, 182, 212, 0.15));
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #22d3ee;
+}
+
+.basic-calculator .keypad button.accent:hover {
+  background: linear-gradient(145deg, rgba(6, 182, 212, 0.35), rgba(6, 182, 212, 0.25));
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
+  border-color: rgba(6, 182, 212, 0.6);
+}
+
+/* Equal Button */
+.basic-calculator .keypad button.equal {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+}
+
+.basic-calculator .keypad button.equal:hover {
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.5);
+}
+
+/* Span-2 Buttons */
+.basic-calculator .keypad button.span-2 {
+  grid-column: span 2;
+}
+
+/* Clear Button */
+.basic-calculator .keypad button.clear {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.basic-calculator .keypad button.clear:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.2);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  .basic-calculator .calc-display {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .basic-calculator .calc-display .expr {
+    font-size: 20px;
+    padding: 14px 16px;
+  }
+  
+  .basic-calculator .calc-display .preview {
+    text-align: center;
+    min-width: auto;
+  }
+  
+  .basic-calculator .keypad {
+    gap: 8px;
+  }
+  
+  .basic-calculator .keypad button {
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .basic-calculator .calc-display .expr {
+    font-size: 18px;
+    padding: 12px 14px;
+  }
+  
+  .basic-calculator .keypad button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  .basic-calculator .keypad button {
+    min-height: 56px;
+  }
+  
+  .basic-calculator .keypad button:hover {
+    transform: none;
+  }
+  
+  .basic-calculator .keypad button:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.15);
+  }
+}

@@ -1,0 +1,189 @@
+/* ===== LENGTH CONVERTER - PROFESSIONAL STYLES ===== */
+
+.length-converter {
+  --calc-accent: #14b8a6;
+  --calc-accent-light: rgba(20, 184, 166, 0.15);
+  --calc-accent-glow: rgba(20, 184, 166, 0.25);
+}
+
+/* Card Header */
+.length-converter .card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(20, 184, 166, 0.15);
+}
+
+.length-converter .card-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.length-converter .card-header .subtext {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Form Grid */
+.length-converter .form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Inputs */
+.length-converter input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  background: rgba(20, 184, 166, 0.05);
+  color: #f9fafb;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.length-converter input:focus {
+  outline: none;
+  border-color: var(--calc-accent);
+  box-shadow: 0 0 0 3px var(--calc-accent-glow);
+  background: rgba(20, 184, 166, 0.1);
+}
+
+/* Results Section */
+.length-converter .results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.length-converter .results .result {
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(20, 184, 166, 0.12), rgba(20, 184, 166, 0.04));
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  box-shadow: 0 8px 24px rgba(20, 184, 166, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.length-converter .results .result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #14b8a6, #2dd4bf);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.length-converter .results .result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(20, 184, 166, 0.2);
+  border-color: rgba(20, 184, 166, 0.4);
+}
+
+.length-converter .results .result:hover::before {
+  opacity: 1;
+}
+
+.length-converter .results .result .result-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.length-converter .results .result .result-value {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #14b8a6 0%, #5eead4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  .length-converter .card-header {
+    text-align: center;
+  }
+  
+  .length-converter .card-header h2 {
+    font-size: 20px;
+  }
+  
+  .length-converter .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .length-converter .results {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .length-converter .results .result {
+    padding: 20px;
+  }
+  
+  .length-converter .results .result .result-value {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .length-converter .card-header h2 {
+    font-size: 18px;
+  }
+  
+  .length-converter .card-header .subtext {
+    font-size: 13px;
+  }
+  
+  .length-converter input {
+    padding: 12px 14px;
+  }
+  
+  .length-converter .results .result {
+    padding: 16px;
+  }
+  
+  .length-converter .results .result .result-value {
+    font-size: 20px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+  .length-converter input {
+    min-height: 50px;
+    font-size: 16px;
+  }
+  
+  .length-converter .results .result:hover {
+    transform: none;
+  }
+  
+  .length-converter .results .result:active {
+    transform: scale(0.98);
+  }
+}

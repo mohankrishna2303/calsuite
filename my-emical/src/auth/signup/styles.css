@@ -1,0 +1,5 @@
+.auth-page .auth-card { max-width: 480px; margin: 0 auto; }
+.auth-page .form-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.auth-page input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.15)); background: var(--input-bg, rgba(0,0,0,0.1)); color: inherit; }
+.auth-page .error { color: #ef4444; font-size: 13px; }
+.auth-page .success { color: #22c55e; font-size: 13px; }
