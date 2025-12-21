@@ -12,7 +12,7 @@ export default function CompoundInterestCalculator() {
   const [annualRate, setAnnualRate] = useState('')
   const [months, setMonths] = useState('')
   const [days, setDays] = useState('')
-  const [monthsPerYear, setMonthsPerYear] = useState(24)
+  const [monthsPerYear, setMonthsPerYear] = useState(1)
   const [compoundsPerYear, setCompoundsPerYear] = useState('')
 
   const { amount, interest } = useMemo(() => {
